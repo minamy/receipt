@@ -11,7 +11,7 @@ public class Backend {
 		Backend main = new Backend();
 		OCR ocr = new OCR();
 		
-		main.getImage();
+		ocr.process(main.getImage());
 		
 	}
 	

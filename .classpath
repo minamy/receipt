@@ -8,5 +8,9 @@
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/lept4j-1.6.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/dist/tess4j-3.4.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/jul-to-slf4j-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/logback-core-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
