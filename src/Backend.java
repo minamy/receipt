@@ -1,15 +1,15 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 public class Backend {
-
+	
 	
 	
 	public static void main(String[] args) {
 		Backend main = new Backend();
+		OCR ocr = new OCR();
 		
 		main.getImage();
 		
