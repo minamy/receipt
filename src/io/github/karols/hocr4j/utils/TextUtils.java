@@ -213,7 +213,7 @@ public final class TextUtils {
     }//tested
 
     private static boolean isNegligible(char c) {
-        return " \'‚,‘’".indexOf(c) >= 0;
+    	return " \'‚,‘’".indexOf(c) >= 0;
     }
 
     /**
