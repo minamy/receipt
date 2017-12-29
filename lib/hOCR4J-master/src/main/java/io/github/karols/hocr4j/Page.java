@@ -13,12 +13,12 @@
 
 package io.github.karols.hocr4j;
 
-import hocr4j.dom.HocrElement;
-import hocr4j.dom.HocrParser;
-import hocr4j.dom.HocrTag;
-import hocr4j.utils.CollectionUtils;
-import hocr4j.utils.DelegatingUnmodifiableList;
-import hocr4j.utils.TextUtils;
+import io.github.karols.hocr4j.dom.HocrElement;
+import io.github.karols.hocr4j.dom.HocrParser;
+import io.github.karols.hocr4j.dom.HocrTag;
+import io.github.karols.hocr4j.utils.CollectionUtils;
+import io.github.karols.hocr4j.utils.DelegatingUnmodifiableList;
+import io.github.karols.hocr4j.utils.TextUtils;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
