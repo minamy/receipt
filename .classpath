@@ -12,5 +12,17 @@
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/logback-classic-1.2.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/logback-core-1.2.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/ghost4j-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/commons-beanutils-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/jboss-vfs-3.2.12.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/jcl-over-slf4j-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/log4j-over-slf4j-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/Tess4J-3.4.2-src/Tess4J/lib/xmlgraphics-commons-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yukam/Downloads/javax.annotation-api-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

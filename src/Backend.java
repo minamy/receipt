@@ -20,7 +20,7 @@ public class Backend {
 		try {
 			readimage = ImageIO.read(new File("C:/Users/yukam/OneDrive/FYPGit/images/receipt4.JPG"));
 			
-			System.out.println("success");
+			//System.out.println("success");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
