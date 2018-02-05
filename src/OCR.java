@@ -2,6 +2,8 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 //import ch.qos.logback.core.net.SyslogOutputStream;
 import net.sourceforge.tess4j.*;
@@ -29,30 +31,43 @@ public class OCR{
 	int bytepp;
 	int bytepl;
 	
+	ArrayList<String> nameAndPriceList = new ArrayList<String>();
+	
 	public OCR(BufferedImage image){
 		exHocr = new ExtractHocr();
 		instance = new Tesseract(); //JNI interface mapping
+		instance.setTessVariable("load_system_dawg", "F");
+		instance.setTessVariable("load_freq_dawg", "F");
+		instance.setTessVariable("user_words_suffix", "user-words");
+		instance.setTessVariable("user_patterns_suffix", "user-patterns");
+//		List<String> configs = Arrays.asList("bazaar");
+//		instance.setConfigs(configs);
 		handle = TessAPI1.TessBaseAPICreate();
+		
 		this.image = image;
 		buf = ImageIOHelper.convertImageData(image);
 		bpp = image.getColorModel().getPixelSize();
 		bytepp = bpp/8;
 		bytepl = (int) Math.ceil(image.getWidth()*bpp/8.0);
+		
 	}
 	
-	public ArrayList<String> processOCR(){
+	public void processOCR(){
 		String result = "";
 		try{
-			
+			instance.setTessVariable("tessedit_char_blacklist", "€");
 			TessAPI1.TessBaseAPISetPageSegMode(handle, TessPageSegMode.PSM_AUTO);
 			TessAPI1.TessBaseAPIInit3(handle, "./tessdata", "eng");
+//			List<String> configs = Arrays.asList("bazaar");
+//			instance.setConfigs(configs);
+//			PointerByReference configP = (PointerByReference) configs;
+//			TessAPI1.TessBaseAPIInit1(handle, "./tessdata", "eng", 0, configP, configs.size());
 			TessAPI1.TessBaseAPISetImage(handle, buf, image.getWidth(), image.getHeight(), bytepp, bytepl);
 			
 			instance.setHocr(true);
 			result = instance.doOCR(image);
 			
-//			System.out.println(result);
-//			exHocr.extract(result);
+			nameAndPriceList = exHocr.extract(result);
 			
 			TessAPI1.TessBaseAPIClearPersistentCache(handle);
 			TessAPI1.TessBaseAPIClear(handle);
@@ -61,9 +76,20 @@ public class OCR{
 			e.printStackTrace();
 		}
 		
-		return exHocr.extract(result);
-		
 	}
+	
+	public ArrayList<String> getNameAndPriceList(){
+		return nameAndPriceList;
+	}
+	
+	public ArrayList<String> getNameList(){
+		return exHocr.getNameList();
+	}
+	
+	public ArrayList<String> getPriceList(){
+		return exHocr.getPriceList();
+	}
+	
 	
 	public int[] getConfidence(){
 		TessAPI1.TessBaseAPISetPageSegMode(handle, TessPageSegMode.PSM_AUTO);
