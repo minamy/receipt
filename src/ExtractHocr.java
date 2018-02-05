@@ -24,7 +24,7 @@ public class ExtractHocr {
 	
 	public ArrayList<String> extract(String result){
 		
-		System.out.println(result);
+		//System.out.println(result);
 		
 		Document doc = Jsoup.parse(result);
 		Elements spans = doc.select("span");
@@ -73,7 +73,7 @@ public class ExtractHocr {
 							
 							if(!oneSpan.text().contains("BALANCE")){
 								if(!oneSpan.text().contains("VISACREDIT")){
-									System.out.println("inside "+oneSpan.text());
+									//System.out.println("inside "+oneSpan.text());
 									namePriceList.add(oneSpan.text());
 									String[] temp = oneSpan.text().split(" £");
 									nameAndPriceList.add(temp[0]);

@@ -43,8 +43,8 @@ public class Backend {
 		String[] nameList = main.convertToArray(ocr.getNameList());
 		String[] priceList= main.convertToArray(ocr.getPriceList());
 		
-		main.sendData(nameList, priceList);
-		
+//		main.sendData(nameList, priceList);
+		main.sendData(nameAndPriceList);
 		
 		confidence = ocr.getConfidence();
 		
@@ -71,7 +71,7 @@ public class Backend {
 		return data;
 	}
 	
-	public void sendData(String[] nameList, String[] priceList){
+	public void sendData(ArrayList<String> nameAndPriceList){
 		
 //			URL url = new URL("http://192.168.0.102/test.php");
 		try {
@@ -84,6 +84,7 @@ public class Backend {
 			// Encoding the POST data  
 			//String data = URLEncoder.encode("key1", "UTF-8") + "=" + URLEncoder.encode("Hello", "UTF-8") + "&" + URLEncoder.encode("key2", "UTF-8") + "=" + URLEncoder.encode("World", "UTF-8");  
 			String data = concat(nameAndPriceList);
+			System.out.println("data"+data);
 			OutputStreamWriter osw = new OutputStreamWriter(con.getOutputStream());  
 			// Sending parameter to site  
 			osw.write(data);  
