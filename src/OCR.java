@@ -111,7 +111,7 @@ public class OCR{
 		
 		int[] confResults = confResult.getPointer().getIntArray(0, wordList.size());
 		for(int i=0; i<wordList.size(); i++){
-			System.out.println(wordList.get(i)+" :"+confResults[i]);
+			//System.out.println(wordList.get(i)+" :"+confResults[i]);
 		}
 		
 		TessAPI1.TessBaseAPIClearPersistentCache(handle);
