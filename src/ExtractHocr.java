@@ -18,10 +18,16 @@ public class ExtractHocr {
 		priceList = new ArrayList<String>();
 		shopList = new ArrayList<String>();
 		shopList.add("Sainsbury's");
+		shopList.add("sainsbury's");
+		shopList.add("Sainsburys");
 		shopList.add("Tesco");
 		shopFound = false;
 	}
 	
+	//--------------------------I should be able to do something about the shop lists. 
+	//For instance if the result contains a similar shop name which differs by 1 character,
+	//It should still recognise that as a shop name
+	//Or it could double check with the user and add the word to the list
 	public ArrayList<String> extract(String result){
 		
 		//System.out.println(result);
@@ -36,10 +42,15 @@ public class ExtractHocr {
 //			System.out.println("oneSpan: "+spans.get(i));
 			String oneSpanClass = oneSpan.attr("class");
 			
+			//identify the shop names
 			if(!shopFound){
+				System.out.println("inside");
+				System.out.println("shopList is empty: "+shopList.isEmpty());
+				System.out.println("shopList's size: "+shopList.size());
 				for(int j=0; j<shopList.size(); j++){
+					System.out.println("each line: "+oneSpan.text());
 					if(oneSpan.text().contains(shopList.get(j))){
-						nameAndPriceList.add(shopList.get(j));
+						nameAndPriceList.add(0, shopList.get(j));
 						shopFound = true;
 					}
 						
