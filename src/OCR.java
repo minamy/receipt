@@ -36,12 +36,12 @@ public class OCR{
 	public OCR(BufferedImage image){
 		exHocr = new ExtractHocr();
 		instance = new Tesseract(); //JNI interface mapping
-		instance.setTessVariable("load_system_dawg", "F");
-		instance.setTessVariable("load_freq_dawg", "F");
-		instance.setTessVariable("user_words_suffix", "user-words");
-		instance.setTessVariable("user_patterns_suffix", "user-patterns");
-//		List<String> configs = Arrays.asList("bazaar");
-//		instance.setConfigs(configs);
+//		instance.setTessVariable("load_system_dawg", "F");
+//		instance.setTessVariable("load_freq_dawg", "F");
+//		instance.setTessVariable("user_words_suffix", "user-words");
+//		instance.setTessVariable("user_patterns_suffix", "user-patterns");
+//		List<String> configs = Arrays.asList("bazaar"); //could cause an error
+//		instance.setConfigs(configs); //could cause an error
 		handle = TessAPI1.TessBaseAPICreate();
 		
 		this.image = image;
@@ -58,10 +58,14 @@ public class OCR{
 			instance.setTessVariable("tessedit_char_blacklist", "€");
 			TessAPI1.TessBaseAPISetPageSegMode(handle, TessPageSegMode.PSM_AUTO);
 			TessAPI1.TessBaseAPIInit3(handle, "./tessdata", "eng");
-//			List<String> configs = Arrays.asList("bazaar");
-//			instance.setConfigs(configs);
-//			PointerByReference configP = (PointerByReference) configs;
-//			TessAPI1.TessBaseAPIInit1(handle, "./tessdata", "eng", 0, configP, configs.size());
+//			instance.setTessVariable("load_system_dawg", "F");//could cause an error
+//            instance.setTessVariable("load_freq_dawg", "F");//could cause an error
+//            instance.setTessVariable("user_words_suffix", "user-words");//could cause an error
+//            instance.setTessVariable("user_patterns_suffix", "user-patterns");//could cause an error
+//			List<String> configs = Arrays.asList("bazaar");//could cause an error
+//			instance.setConfigs(configs);//could cause an error
+//			PointerByReference configP = (PointerByReference) configs;//could cause an error
+//			TessAPI1.TessBaseAPIInit1(handle, "./tessdata", "eng", 0, configP, configs.size());//could cause an error
 			TessAPI1.TessBaseAPISetImage(handle, buf, image.getWidth(), image.getHeight(), bytepp, bytepl);
 			
 			instance.setHocr(true);

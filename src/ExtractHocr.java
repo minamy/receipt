@@ -44,11 +44,7 @@ public class ExtractHocr {
 			
 			//identify the shop names
 			if(!shopFound){
-				System.out.println("inside");
-				System.out.println("shopList is empty: "+shopList.isEmpty());
-				System.out.println("shopList's size: "+shopList.size());
 				for(int j=0; j<shopList.size(); j++){
-					System.out.println("each line: "+oneSpan.text());
 					if(oneSpan.text().contains(shopList.get(j))){
 						nameAndPriceList.add(0, shopList.get(j));
 						shopFound = true;
